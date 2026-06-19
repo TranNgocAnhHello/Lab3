@@ -9,16 +9,10 @@ import './App.css'
 
 const STORAGE_KEY = 'students'
 
-const defaultStudents = [
-  { id: 'SV001', name: 'Nguyen Van A', age: '20', major: 'information technology' },
-  { id: 'SV002', name: 'Tran Thi B', age: '21', major: 'Business administration' },
-  { id: 'SV003', name: 'Le Van C', age: '22', major: 'Marketing' },
-]
-
 function App() {
   const [students, dispatch] = useReducer(studentReducer, [], () => {
     const savedStudents = localStorage.getItem(STORAGE_KEY)
-    return savedStudents ? JSON.parse(savedStudents) : defaultStudents
+    return savedStudents ? JSON.parse(savedStudents) : []
   })
   const [name, setName] = useState('')
   const [age, setAge] = useState('')
@@ -130,13 +124,12 @@ function AppContent({
   return (
     <div className="app">
       <header className="app__header">
-        <div className="app__title">
-          <h1>Student Management</h1>
-          <p>Manage students with add, edit, delete, search, filter, and local storage.</p>
-        </div>
         <button type="button" className="btn btn--ghost app__theme-btn" onClick={toggleTheme}>
           {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
         </button>
+        <div className="app__title">
+          <h1>Student Management</h1>
+        </div>
       </header>
 
       <StudentForm
