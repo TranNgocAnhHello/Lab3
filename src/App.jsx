@@ -124,12 +124,12 @@ function AppContent({
   return (
     <div className="app">
       <header className="app__header">
-        <button type="button" className="btn btn--ghost app__theme-btn" onClick={toggleTheme}>
-          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-        </button>
         <div className="app__title">
           <h1>Student Management</h1>
         </div>
+        <button type="button" className="btn btn--ghost app__theme-btn" onClick={toggleTheme}>
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+        </button>
       </header>
 
       <StudentForm

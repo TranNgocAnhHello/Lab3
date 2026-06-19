@@ -34,9 +34,9 @@
 
 .app__header {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -169,10 +169,6 @@
 }
 
 @media (max-width: 768px) {
-  .app__header {
-    flex-direction: column;
-  }
-
   .form,
   .filters {
     grid-template-columns: 1fr;
